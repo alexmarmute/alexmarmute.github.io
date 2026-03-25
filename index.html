@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Jordan Lee — full-stack developer building web apps and developer tools.">
+  <title>Jordan Lee · Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --bg-elevated: #1a222d;
+      --surface: #232f3e;
+      --text: #e8eef4;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-dim: rgba(56, 189, 248, 0.15);
+      --border: rgba(148, 163, 184, 0.2);
+      --radius: 12px;
+      --font: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+      --mono: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+      --max: 1100px;
+      --header-h: 64px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      padding: 0.75rem 1rem;
+      background: var(--accent);
+      color: var(--bg);
+      z-index: 100;
+    }
+
+    .skip:focus {
+      left: 0.5rem;
+      top: 0.5rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(15, 20, 25, 0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .logo:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    section {
+      scroll-margin-top: calc(var(--header-h) + 1rem);
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .hero {
+      padding: clamp(3rem, 10vw, 5.5rem) 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr auto;
+      }
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+    }
+
+    .hero-lead {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 36ch;
+      margin: 0 0 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.08);
+      text-decoration: none;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .hero-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 320px;
+    }
+
+    .hero-card .prompt {
+      color: var(--accent);
+    }
+
+    .section-title {
+      font-size: clamp(1.35rem, 3vw, 1.65rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.35rem;
+    }
+
+    .section-intro {
+      color: var(--text-muted);
+      margin: 0 0 2rem;
+      max-width: 52ch;
+    }
+
+    .about {
+      padding: clamp(3rem, 6vw, 4.5rem) 0;
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 720px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .about-block {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .about-block h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+    }
+
+    .about-block p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .projects {
+      padding: clamp(3rem, 6vw, 4.5rem) 0;
+      background: linear-gradient(180deg, var(--bg) 0%, #121820 50%, var(--bg) 100%);
+    }
+
+    .project-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 960px) {
+      .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .project-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .project-card p {
+      margin: 0 0 1rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      flex-grow: 1;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      background: var(--accent-dim);
+      color: var(--accent);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .skills {
+      padding: clamp(3rem, 6vw, 4.5rem) 0;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .skill-list li {
+      padding: 0.5rem 1rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .experience {
+      padding: clamp(3rem, 6vw, 4.5rem) 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .timeline {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-left: 2px solid var(--border);
+      margin-left: 0.5rem;
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 0 0 1.75rem 1.5rem;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 0.35rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--bg);
+    }
+
+    .timeline li:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1rem;
+    }
+
+    .timeline .meta {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin: 0 0 0.5rem;
+    }
+
+    .timeline p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .contact {
+      padding: clamp(3rem, 6vw, 4.5rem) 0;
+    }
+
+    .contact-box {
+      background: var(--accent-dim);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .contact-box p {
+      margin: 0 0 1.25rem;
+      color: var(--text-muted);
+    }
+
+    .contact-email {
+      font-family: var(--mono);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#">Jordan Lee</a>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Full-stack developer</p>
+          <h1 id="hero-heading">I build reliable web apps and developer tooling.</h1>
+          <p class="hero-lead">
+            Example portfolio for GitHub Pages — swap in your bio, real project links, and contact details.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Sample code snippet">
+          <span class="prompt">~/portfolio</span> npm run dev<br>
+          <span style="color: #86efac;">✓</span> Ready on http://localhost:3000<br>
+          <span class="prompt">$</span> git push origin main<br>
+          <span style="color: #86efac;">→</span> Pages deployed
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="about" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading" class="section-title">About</h2>
+        <p class="section-intro">
+          Fictional profile for layout demo. Replace with your story, location, and what you are looking for next.
+        </p>
+        <div class="about-grid">
+          <div class="about-block">
+            <h3>Background</h3>
+            <p>
+              I am a software engineer based in <strong style="color: var(--text);">Austin, Texas</strong> (example).
+              I have spent the last five years shipping products at startups and contributing to open-source CLI tools.
+            </p>
+          </div>
+          <div class="about-block">
+            <h3>Focus</h3>
+            <p>
+              TypeScript, React, Node, and Postgres on the stack side; performance, DX, and clear documentation on the human side.
+              Currently interested in edge functions and observability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <h2 id="projects-heading" class="section-title">Selected projects</h2>
+        <p class="section-intro">
+          Placeholder projects with sample descriptions. Point “Live” and “Code” to your real demos and repositories.
+        </p>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>Nimbus Task API</h3>
+            <div class="tags" aria-hidden="true">
+              <span class="tag">Node</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">REST</span>
+            </div>
+            <p>
+              Backend for a fictional team task manager: JWT auth, role-based access, and webhook notifications for due dates.
+            </p>
+            <div class="project-links">
+              <a href="https://example.com" rel="noopener noreferrer">Live demo</a>
+              <a href="https://github.com" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <h3>Atlas Dashboard</h3>
+            <div class="tags" aria-hidden="true">
+              <span class="tag">React</span>
+              <span class="tag">Vite</span>
+              <span class="tag">Charts</span>
+            </div>
+            <p>
+              Example analytics UI with filterable time ranges, CSV export, and dark mode — built as a static SPA for fast loads.
+            </p>
+            <div class="project-links">
+              <a href="https://example.com" rel="noopener noreferrer">Live demo</a>
+              <a href="https://github.com" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <h3>RiverRun CLI</h3>
+            <div class="tags" aria-hidden="true">
+              <span class="tag">Rust</span>
+              <span class="tag">CLI</span>
+            </div>
+            <p>
+              Made-up command-line tool to scaffold microservices with tests and CI configs; published as a learning exercise.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <h3>PhotoShelf</h3>
+            <div class="tags" aria-hidden="true">
+              <span class="tag">Next.js</span>
+              <span class="tag">S3</span>
+            </div>
+            <p>
+              Fictional image library with signed uploads, album sharing, and responsive gallery grid — placeholder for a full-stack showcase.
+            </p>
+            <div class="project-links">
+              <a href="https://example.com" rel="noopener noreferrer">Live demo</a>
+              <a href="https://github.com" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <h3>DevDocs Search</h3>
+            <div class="tags" aria-hidden="true">
+              <span class="tag">Python</span>
+              <span class="tag">Elasticsearch</span>
+            </div>
+            <p>
+              Example doc indexer that crawls markdown repos and exposes a simple search API — good for a “backend-heavy” card.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <h3>Pixel Workshop</h3>
+            <div class="tags" aria-hidden="true">
+              <span class="tag">Canvas</span>
+              <span class="tag">Web</span>
+            </div>
+            <p>
+              In-browser sprite editor demo with layers and PNG export — entirely front-end for GitHub Pages hosting.
+            </p>
+            <div class="project-links">
+              <a href="https://example.com" rel="noopener noreferrer">Live demo</a>
+              <a href="https://github.com" rel="noopener noreferrer">Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 id="skills-heading" class="section-title">Skills</h2>
+        <p class="section-intro">Representative tags — edit to match your résumé.</p>
+        <ul class="skill-list">
+          <li>TypeScript</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>HTML &amp; CSS</li>
+          <li>PostgreSQL</li>
+          <li>Git &amp; GitHub</li>
+          <li>REST APIs</li>
+          <li>Testing (Jest, Playwright)</li>
+          <li>Docker</li>
+          <li>CI/CD</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience" class="experience" aria-labelledby="experience-heading">
+      <div class="container">
+        <h2 id="experience-heading" class="section-title">Experience</h2>
+        <p class="section-intro">Sample timeline — replace companies, dates, and bullets with your history.</p>
+        <ol class="timeline">
+          <li>
+            <h3>Senior Software Engineer · Northwind Labs (fictional)</h3>
+            <p class="meta">2022 — Present</p>
+            <p>Led migration of a monolith API to modular services; mentored two junior developers; cut p95 latency by 40% (example metric).</p>
+          </li>
+          <li>
+            <h3>Software Engineer · Blue Harbor Digital (fictional)</h3>
+            <p class="meta">2019 — 2022</p>
+            <p>Built customer-facing dashboards and internal admin tools using React and GraphQL; owned on-call rotation for payment webhooks.</p>
+          </li>
+          <li>
+            <h3>B.S. Computer Science · Riverdale University (fictional)</h3>
+            <p class="meta">2015 — 2019</p>
+            <p>Coursework in algorithms, databases, and HCI; capstone: campus room booking app used by 2k students (example).</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading" class="section-title">Contact</h2>
+        <p class="section-intro">Use a real address or a contact form service when you go live.</p>
+        <div class="contact-box">
+          <p>Open to full-time roles and selective contract work.</p>
+          <a class="contact-email" href="mailto:hello@example.com">hello@example.com</a>
+          <div class="social">
+            <a href="https://github.com" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://example.com" rel="noopener noreferrer">Résumé (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="y"></span> Jordan Lee. Example site for GitHub Pages — customize freely.</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
