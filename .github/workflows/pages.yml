@@ -3,7 +3,6 @@ name: Deploy site to GitHub Pages
 on:
   push:
     branches: [main, master]
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -19,15 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: npm
-      - run: npm install
-      - run: npm run build
+      - name: Assemble static site
+        run: |
+          mkdir -p _site/assets
+          cp index.html styles.css AlexMarmuteProfileResume.pdf _site/
+          cp assets/profile.jpeg _site/assets/
+          cp .nojekyll _site/
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: _site
 
   deploy:
     needs: build

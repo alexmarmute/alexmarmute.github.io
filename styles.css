@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --black: #0f0f0f;
   --about-bg: #2b2b2b;
   --contact-bg: #191919;
@@ -66,7 +66,6 @@ a:hover {
   top: 0.75rem;
 }
 
-/* â€”â€” Ceevee-style top nav (Tim Baker personal site) â€”â€” */
 .ceevee-nav-wrap {
   position: fixed;
   left: 0;
@@ -105,7 +104,6 @@ a:hover {
   color: var(--green);
 }
 
-/* â€”â€” Hero â€”â€” */
 .site-hero {
   position: relative;
   min-height: 100vh;
@@ -283,7 +281,6 @@ section {
   padding: 0 1.5rem;
 }
 
-/* â€”â€” About (#2b2b2b) â€”â€” */
 .section-about {
   background: var(--about-bg);
   padding: clamp(4.5rem, 8vw, 6rem) 0 clamp(3.5rem, 6vw, 4.5rem);
@@ -389,7 +386,6 @@ section {
   color: var(--about-bg);
 }
 
-/* â€”â€” Band (#ebeeee) â€” skills & highlights â€”â€” */
 .section-band {
   background: var(--band-bg);
   padding: clamp(3.5rem, 6vw, 5rem) 0;
@@ -454,7 +450,6 @@ section {
   border-radius: 3px;
 }
 
-/* â€”â€” Resume / education (white) â€”â€” */
 .section-resume {
   background: var(--resume-bg);
   padding: clamp(3.5rem, 6vw, 5.5rem) 0;
@@ -625,7 +620,6 @@ section {
   line-height: 1.65;
 }
 
-/* â€”â€” Contact (#191919) â€”â€” */
 .section-contact {
   background: var(--contact-bg);
   padding: clamp(4rem, 7vw, 5.5rem) 0;
@@ -709,4 +703,8 @@ section {
 
 .site-footer a:hover {
   color: #fff;
+}
+
+.contact-intro-gap {
+  margin-top: 0.75rem;
 }

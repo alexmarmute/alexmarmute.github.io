@@ -8,9 +8,349 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="ceevee-nav-wrap">
+    <nav aria-label="Primary">
+      <ul class="ceevee-nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#summary">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Resume</a></li>
+        <li><a href="#highlights">Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+    <header class="site-hero" id="home" aria-labelledby="hero-name">
+      <div class="hero-banner">
+        <h1 id="hero-name">Alex Marmute</h1>
+        <p class="hero-tagline">
+          I'm a <strong>Rio de Janeiro</strong> based <strong>Senior Technical Product Manager</strong>. I drive
+          digital programs, enterprise agile capability, and AI-assisted delivery at
+          <a href="https://www.zurich.com.br/en" target="_blank" rel="noopener noreferrer">Zurich Insurance</a>
+          — aligning technology with business outcomes across channels and platforms.
+        </p>
+        <hr class="hero-hr">
+        <ul class="hero-social" aria-label="Social links">
+          <li>
+            <a href="https://www.linkedin.com/in/alexmarmute/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/marmuteoficial/" target="_blank" rel="noopener noreferrer" title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:alex_marmute@hotmail.com" title="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/alexmarmute" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+          </li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Contact me</a>
+          <a class="btn btn-ghost" href="AlexMarmuteProfileResume.pdf" download>Download resume</a>
+        </div>
+      </div>
+      <a class="scrolldown" href="#summary" aria-label="Scroll to about section">↓</a>
+    </header>
+
+    <section id="summary" class="section-about" aria-labelledby="summary-heading">
+      <div class="container about-grid">
+        <div>
+          <img class="profile-pic" src="assets/profile.jpeg" width="320" height="320" alt="Alex Marmute portrait">
+        </div>
+        <div class="about-copy">
+          <h2 id="summary-heading">About me</h2>
+          <p>
+            With over <strong style="color: #ccc">13 years</strong> of experience, I specialize in technical
+            leadership, reliability engineering, and business strategy. I am
+            <strong style="color: #ccc">Lead Technical Program Manager at Zurich Insurance</strong> (remote),
+            driving digital channels and enterprise agile capability with AI-assisted practices.
+          </p>
+          <p>
+            Previously, as <strong style="color: #ccc">Senior AI Technical Product Manager at Daniel Law</strong>,
+            I led finance automation with GenAI and LLMs, partner relationships, and executive reporting — and I mentor
+            Product Owners to grow delivery maturity.
+          </p>
+          <div class="pill-row" aria-label="Focus areas">
+            <span class="pill">Technical leadership</span>
+            <span class="pill">ProdOps</span>
+            <span class="pill">Agile at scale</span>
+            <span class="pill">CI/CD &amp; automation</span>
+            <span class="pill">Data-driven</span>
+            <span class="pill">Azure DevOps</span>
+            <span class="pill">Power BI</span>
+          </div>
+          <div class="contact-details">
+            <h3>Contact details</h3>
+            <p><strong style="color: #fff">Alex Marmute</strong></p>
+            <p>Rio de Janeiro, Brazil</p>
+            <p><a href="tel:+5521982576083">+55 21 98257-6083</a></p>
+            <p><a href="mailto:alex_marmute@hotmail.com">alex_marmute@hotmail.com</a></p>
+            <a class="btn btn-download" href="AlexMarmuteProfileResume.pdf" download>Download resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section-band" aria-labelledby="skills-heading">
+      <div class="container">
+        <h2 id="skills-heading">Skills</h2>
+        <p class="lead">Core strengths and tools I use to drive delivery, quality, and strategy.</p>
+        <div class="skill-grid">
+          <div class="skill-card">
+            <h3>Top skills</h3>
+            <div class="skill-tags">
+              <span>Azure DevOps</span><span>Financial planning</span><span>Strategic vision</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Delivery &amp; leadership</h3>
+            <div class="skill-tags">
+              <span>Program &amp; portfolio</span><span>LeSS / Kanban</span><span>PI planning &amp; RTE</span><span>Mentoring POs / SMs</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>AI &amp; automation</h3>
+            <div class="skill-tags">
+              <span>GitHub / Azure Copilot</span><span>Gemini &amp; Claude</span><span>n8n &amp; LLMs</span><span>Selenium / Cypress / Playwright</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Platforms &amp; data</h3>
+            <div class="skill-tags">
+              <span>Power BI</span><span>Mural &amp; Kanbanize</span><span>Pipefy</span><span>Azure &amp; cloud</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section-resume" aria-labelledby="edu-heading">
+      <div class="container block">
+        <h2 id="edu-heading"><span>Education</span></h2>
+        <p class="intro">Formal education and credentials.</p>
+        <article class="edu-card">
+          <h3>Instituto Infnet</h3>
+          <p class="meta">Bachelor of Engineering (B.E.), Computer Engineering · 2013 — 2018</p>
+          <p>Engineering foundation for software delivery, infrastructure, and product leadership.</p>
+        </article>
+        <p class="subh">Certifications</p>
+        <ul class="cert-list">
+          <li>Certified ScrumMaster (CSM)</li>
+          <li>Advanced Certified Scrum Developer</li>
+          <li>Brigadista Civil</li>
+        </ul>
+        <p class="subh">Languages</p>
+        <ul class="cert-list">
+          <li>Português — Native or bilingual</li>
+          <li>English — Native or bilingual</li>
+          <li>Español — Limited working</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience" class="section-resume" aria-labelledby="exp-heading">
+      <div class="container block">
+        <h2 id="exp-heading"><span>Work experience</span></h2>
+        <p class="intro">Selected roles and outcomes (most recent first).</p>
+
+        <article class="job">
+          <div class="job-header">
+            <h3><span class="company">Zurich Insurance</span> — Lead Technical Program Manager</h3>
+            <p class="when">June 2023 — Present · Remote</p>
+          </div>
+          <ul>
+            <li>Azure Copilot for user stories and acceptance criteria; structured overviews from engineering notes and Slack.</li>
+            <li>GitHub Copilot for PoCs, API examples, test automation (Selenium, Cypress, Playwright).</li>
+            <li><strong>Digital Channels:</strong> LeSS and Lean Kanban across five teams; PI Planning and ART with RTE; Power BI for outcomes.</li>
+            <li><strong>CEAP:</strong> Mentoring; transformation programs; strategy to portfolios and teams.</li>
+          </ul>
+          <p class="impacts">Impacts: mobile car insurance app and first chatbot; trained 30+ POs, 10+ Scrum Masters, 5 agile coaches; O2 and autonomous teams; reference for test automation.</p>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <h3><span class="company">Daniel Law</span> — Senior AI Technical Product Manager</h3>
+            <p class="when">January 2025 — January 2026 · Rio de Janeiro</p>
+          </div>
+          <ul>
+            <li>Finance automation, partners/vendors, dashboards (Mural, Kanbanize), n8n and GenAI/LLMs, Pipefy.</li>
+            <li>Reporting to CFO, COO; IT roadmap; mentored POs; GenAI training; workshops.</li>
+            <li>Gemini and Claude for triage, docs, PRDs, and release comms.</li>
+          </ul>
+          <p class="impacts">Results: payment pipeline automation; ~80% AP manual time reduction; ~43% budget optimization in finance processing.</p>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <h3><span class="company">Nower</span> — Principal Technical Consultant</h3>
+            <p class="when">September 2019 — June 2023 · Rio de Janeiro</p>
+          </div>
+          <ul>
+            <li>Flexera SaaS focus; global training and bootcamps; sales support and competitive analysis.</li>
+            <li>Strategy to portfolios; coaching at scale.</li>
+          </ul>
+          <p class="impacts">Shorter onboarding, stronger conversion, higher adoption, lower support load.</p>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <h3><span class="company">AsteriscoLab</span> — CTO as a Service</h3>
+            <p class="when">March 2022 — November 2022</p>
+          </div>
+          <ul>
+            <li>Architecture, observability, CI/CD; hiring and mentoring; CEO/board liaison; agile playbooks.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <h3><span class="company">M4U (Bemobi)</span> — Senior Software Delivery Manager</h3>
+            <p class="when">August 2018 — August 2019 · Rio de Janeiro</p>
+          </div>
+          <ul>
+            <li>Platform modernization workstreams; migrations; governance and DORA-style metrics.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <h3><span class="company">Concrete Solutions</span> — Lead DevOps Engineer</h3>
+            <p class="when">April 2016 — August 2018</p>
+          </div>
+          <ul>
+            <li>DevOps vision, CI/CD architecture, mentoring, standards and automation.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <h3><span class="company">ASC Technology Solutions</span> — Full Stack Engineer</h3>
+            <p class="when">March 2016 — April 2016</p>
+          </div>
+          <ul>
+            <li>.NET, SQL, Azure APIs; Docker and Chef; Scrum.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <h3><span class="company">Schlumberger</span> — Software Engineer</h3>
+            <p class="when">April 2015 — November 2015</p>
+          </div>
+          <ul>
+            <li>Protheus modules; Citrix / New Relic; agile and DevOps.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <h3><span class="company">DoeBasico</span> — Founding Member</h3>
+            <p class="when">October 2014 — April 2015</p>
+          </div>
+          <ul>
+            <li>Data-driven social startup; donor platform; NGO partnerships.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <h3><span class="company">OceanPact</span> — Software Engineer</h3>
+            <p class="when">August 2014 — February 2015</p>
+          </div>
+          <ul>
+            <li>Offshore software; agile adoption; automated delivery pipeline.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-header">
+            <h3><span class="company">Church &amp; Dwight</span> — Infrastructure Engineer</h3>
+            <p class="when">May 2013 — August 2014</p>
+          </div>
+          <ul>
+            <li>IT infrastructure; Citrix; Kanban; Spicework / SQL dashboards.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="highlights" class="section-band" aria-labelledby="hi-heading">
+      <div class="container">
+        <h2 id="hi-heading">Highlights</h2>
+        <p class="lead">Impact snapshots from recent programs.</p>
+        <div class="highlight-grid">
+          <div class="highlight-card">
+            <h3>Finance automation at scale</h3>
+            <p>GenAI, n8n, and CRM integration — major reduction in manual AP work and measurable budget efficiency.</p>
+          </div>
+          <div class="highlight-card">
+            <h3>Zurich digital channels</h3>
+            <p>Mobile car insurance experience and conversational chatbot; scaled agile coaching.</p>
+          </div>
+          <div class="highlight-card">
+            <h3>Copilot in the SDLC</h3>
+            <p>Azure and GitHub Copilot for stories, tests, PoCs, and automation.</p>
+          </div>
+          <div class="highlight-card">
+            <h3>Data-driven portfolios</h3>
+            <p>Power BI and lean practices aligning executives, suppliers, and delivery teams.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading">Contact</h2>
+        <p class="intro">
+          Open to conversations about technical product leadership, agile transformation, and AI-enabled delivery.
+          Reach out anytime.
+        </p>
+        <div class="contact-box">
+          <a class="contact-email" href="mailto:alex_marmute@hotmail.com">alex_marmute@hotmail.com</a>
+          <p class="contact-intro-gap"><a href="tel:+5521982576083">+55 21 98257-6083</a></p>
+          <div class="contact-social">
+            <a href="https://www.linkedin.com/in/alexmarmute/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/marmuteoficial/" target="_blank" rel="noopener noreferrer" title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="mailto:alex_marmute@hotmail.com" title="Email">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+            <a href="https://github.com/alexmarmute" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        © 2026 Alex Marmute · Layout inspired by
+        <a href="https://github.com/tbakerx/Tim-Baker-Personal-Website" target="_blank" rel="noopener noreferrer">Tim Baker</a>
+        (Ceevee / resume template) · Static HTML &amp; CSS
+      </p>
+    </div>
+  </footer>
 </body>
 </html>

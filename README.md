@@ -21,18 +21,17 @@ Feel free to reach out on [LinkedIn](https://www.linkedin.com/in/alexmarmute/) o
 
 ---
 
-## Portfolio site (React + Vite)
+## Portfolio site (static HTML + CSS)
 
-The live site is built with **React 18** and **Vite**. Source lives in `src/`; shared copy and résumé data are in `src/data/portfolioData.js`.
+The live site is plain **HTML** and **CSS** (`index.html`, `styles.css`). Copy and structure match the previous React version.
 
-- **Install:** `npm install`
-- **Dev server:** `npm run dev`
-- **Production build:** `npm run build` (output in `dist/`)
+- **Photo:** `assets/profile.jpeg`
+- **Résumé PDF:** `AlexMarmuteProfileResume.pdf` (repo root)
 
-Static assets (photo, PDF) are in `public/`.
+To preview locally, open `index.html` in a browser or run any static file server from the repo root.
 
 ### GitHub Pages
 
-1. **GitHub Actions (recommended):** In the repo go to **Settings → Pages** and set **Source** to **GitHub Actions**. Pushes to `main` or `master` run [.github/workflows/pages.yml](.github/workflows/pages.yml) and publish `dist/`.
+1. **GitHub Actions:** In **Settings → Pages**, set **Source** to **GitHub Actions**. Pushes to `main` or `master` run [.github/workflows/pages.yml](.github/workflows/pages.yml), which copies `index.html`, `styles.css`, the PDF, `assets/profile.jpeg`, and `.nojekyll` into the published site.
 
-2. **Manual:** Run `npm run build`, then upload or host the contents of `dist/` anywhere you like.
+2. **Deploy from branch:** You can instead publish the **root** of `main`; the same files must be at the repo root so links resolve.
