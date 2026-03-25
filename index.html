@@ -285,18 +285,50 @@
       fill: currentColor;
     }
 
-    .hero-illustration {
-      aspect-ratio: 1;
-      max-width: 280px;
+    .hero-photo {
       margin: 0 auto;
+      max-width: min(100%, 300px);
+      position: relative;
+    }
+
+    .hero-photo::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: calc(var(--radius) + 6px);
+      background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 50%, #38bdf8 100%);
+      opacity: 0.35;
+      z-index: 0;
+    }
+
+    .hero-photo-inner {
+      position: relative;
+      z-index: 1;
       border-radius: var(--radius);
-      background: linear-gradient(145deg, var(--accent-soft) 0%, #e8e5ff 50%, #fff 100%);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5rem;
-      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 3px solid #fff;
+      box-shadow:
+        var(--shadow),
+        0 0 0 1px var(--border);
+      aspect-ratio: 4 / 5;
+      background: var(--border);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .hero-photo figcaption {
+      margin-top: 0.65rem;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
     }
 
     /* Summary */
@@ -625,7 +657,18 @@
             </a>
           </div>
         </div>
-        <div class="hero-illustration" aria-hidden="true">🚀</div>
+        <figure class="hero-photo">
+          <div class="hero-photo-inner">
+            <img
+              src="assets/profile.jpeg"
+              width="600"
+              height="750"
+              alt="Alex Marmute — portrait photo"
+              loading="eager"
+              decoding="async">
+          </div>
+          <figcaption>Alex Marmute</figcaption>
+        </figure>
       </div>
     </section>
 
